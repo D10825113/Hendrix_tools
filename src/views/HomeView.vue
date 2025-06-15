@@ -172,7 +172,7 @@
       </div>
 
       <!-- Statistics -->
-      <div
+      <!-- <div
         class="mt-8 bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700"
       >
         <div class="px-6 py-4">
@@ -191,8 +191,8 @@
               <div class="text-sm text-gray-600 dark:text-gray-400">Version</div>
             </div>
           </div>
-        </div>
-      </div>
+        </div> 
+      </div> -->
     </div>
   </div>
 </template>
