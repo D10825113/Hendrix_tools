@@ -1,7 +1,7 @@
 <template>
   <div class="bg-gray-50 dark:bg-gray-900">
     <div class="max-w-7xl mx-auto">
-      <!-- 歡迎區塊 -->
+      <!-- Welcome Section -->
       <div
         class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 mb-6"
       >
@@ -13,16 +13,16 @@
               <span class="text-white font-bold text-xl">HT</span>
             </div>
             <h1 class="text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl">
-              歡迎使用 Hendrix Tools
+              Welcome to Hendrix Tools
             </h1>
             <p class="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              開發者實用工具集合，提升您的工作效率
+              A collection of useful developer tools to enhance your productivity
             </p>
           </div>
         </div>
       </div>
 
-      <!-- 工具網格 -->
+      <!-- Tools Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <!-- CPUID Parser Tool Card -->
         <div
@@ -46,23 +46,24 @@
                 </svg>
               </div>
               <div class="ml-4">
-                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">CPUID 解析器</h3>
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">CPUID Parser</h3>
                 <span
                   class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300"
                 >
-                  系統工具
+                  System Tool
                 </span>
               </div>
             </div>
             <p class="text-gray-600 dark:text-gray-300 mb-4">
-              解析和分析 CPUID 十六進制值，提取 CPU 系列、型號和步進資訊，並提供視覺化二進制表示。
+              Parse and analyze CPUID hexadecimal values, extract CPU family, model, and stepping
+              information, and provide visual binary representation.
             </p>
             <div class="flex items-center justify-between">
               <router-link
                 to="/cpuid-parser"
                 class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200"
               >
-                開啟工具
+                Open Tool
                 <svg class="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                   <path
                     fill-rule="evenodd"
@@ -76,7 +77,7 @@
           </div>
         </div>
 
-        <!-- 即將推出的工具 -->
+        <!-- Coming Soon Tools -->
         <div
           class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 opacity-60"
         >
@@ -99,24 +100,24 @@
               </div>
               <div class="ml-4">
                 <h3 class="text-lg font-semibold text-gray-600 dark:text-gray-400">
-                  更多工具即將推出
+                  More Tools Coming Soon
                 </h3>
                 <span
                   class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-400"
                 >
-                  敬請期待
+                  Stay Tuned
                 </span>
               </div>
             </div>
             <p class="text-gray-500 dark:text-gray-400 mb-4">
-              更多實用的開發者工具將在未來的更新中加入。
+              More useful developer tools will be added in future updates.
             </p>
             <div class="flex items-center justify-between">
               <button
                 disabled
                 class="inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-600 text-sm font-medium rounded-md text-gray-400 bg-gray-100 dark:bg-gray-700 cursor-not-allowed"
               >
-                即將推出
+                Coming Soon
               </button>
               <span class="text-sm text-gray-400">TBD</span>
             </div>
@@ -145,24 +146,24 @@
               </div>
               <div class="ml-4">
                 <h3 class="text-lg font-semibold text-gray-600 dark:text-gray-400">
-                  更多工具即將推出
+                  More Tools Coming Soon
                 </h3>
                 <span
                   class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-400"
                 >
-                  敬請期待
+                  Stay Tuned
                 </span>
               </div>
             </div>
             <p class="text-gray-500 dark:text-gray-400 mb-4">
-              更多實用的開發者工具將在未來的更新中加入。
+              More useful developer tools will be added in future updates.
             </p>
             <div class="flex items-center justify-between">
               <button
                 disabled
                 class="inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-600 text-sm font-medium rounded-md text-gray-400 bg-gray-100 dark:bg-gray-700 cursor-not-allowed"
               >
-                即將推出
+                Coming Soon
               </button>
               <span class="text-sm text-gray-400">TBD</span>
             </div>
@@ -170,24 +171,24 @@
         </div>
       </div>
 
-      <!-- 統計資訊 -->
+      <!-- Statistics -->
       <div
         class="mt-8 bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700"
       >
         <div class="px-6 py-4">
-          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">工具統計</h3>
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Tool Statistics</h3>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div class="text-center">
               <div class="text-2xl font-bold text-blue-600 dark:text-blue-400">1</div>
-              <div class="text-sm text-gray-600 dark:text-gray-400">可用工具</div>
+              <div class="text-sm text-gray-600 dark:text-gray-400">Available Tools</div>
             </div>
             <div class="text-center">
               <div class="text-2xl font-bold text-green-600 dark:text-green-400">2</div>
-              <div class="text-sm text-gray-600 dark:text-gray-400">即將推出</div>
+              <div class="text-sm text-gray-600 dark:text-gray-400">Coming Soon</div>
             </div>
             <div class="text-center">
               <div class="text-2xl font-bold text-purple-600 dark:text-purple-400">1.0</div>
-              <div class="text-sm text-gray-600 dark:text-gray-400">版本</div>
+              <div class="text-sm text-gray-600 dark:text-gray-400">Version</div>
             </div>
           </div>
         </div>

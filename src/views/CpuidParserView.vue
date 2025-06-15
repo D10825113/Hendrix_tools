@@ -15,10 +15,9 @@
                 d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"
               />
             </svg>
-          </div>
-          <div>
-            <h1 class="text-2xl font-bold text-gray-900 dark:text-white">CPUID 解析工具</h1>
-            <p class="text-gray-600 dark:text-gray-300">解析和分析 CPUID 十六進制值</p>
+          </div>          <div>
+            <h1 class="text-2xl font-bold text-gray-900 dark:text-white">CPUID Parser Tool</h1>
+            <p class="text-gray-600 dark:text-gray-300">Parse and analyze CPUID hexadecimal values</p>
           </div>
         </div>
       </div>
@@ -30,18 +29,17 @@
     >
       <div class="p-6">
         <!-- 輸入區域 -->
-        <section class="mb-6">
-          <label
+        <section class="mb-6">          <label
             for="cpuidHex"
             class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
           >
-            輸入 CPUID 值:
+            Enter CPUID Value:
           </label>
           <input
             id="cpuidHex"
             v-model="cpuidInput"
             type="text"
-            placeholder="例如: 806F8"
+            placeholder="e.g.: 806F8"
             class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
             :class="{ 'border-red-500 focus:ring-red-500 focus:border-red-500': errorMessage }"
             @input="parseCPUID"
@@ -73,7 +71,7 @@
           <div
             class="p-4 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg"
           >
-            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">二進制表示</h3>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">Binary Representation</h3>
             <div
               class="font-mono text-sm break-all overflow-x-auto bg-gray-900 dark:bg-gray-800 p-3 rounded border"
             >
@@ -87,37 +85,36 @@
           <div
             class="p-4 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg"
           >
-            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">字段解析</h3>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">Field Parsing</h3>
             <div class="space-y-3">
               <!-- 字段項目 -->
               <div class="flex items-center space-x-3">
-                <span class="w-4 h-4 bg-yellow-500 rounded flex-shrink-0"></span>
-                <span class="text-gray-700 dark:text-gray-300">
-                  <strong>步進 (Stepping)</strong> (位元 0-3): {{ cpuidData.stepping }}
+                <span class="w-4 h-4 bg-yellow-500 rounded flex-shrink-0"></span>                <span class="text-gray-700 dark:text-gray-300">
+                  <strong>Stepping</strong> (Bits 0-3): {{ cpuidData.stepping }}
                 </span>
               </div>
               <div class="flex items-center space-x-3">
                 <span class="w-4 h-4 bg-cyan-500 rounded flex-shrink-0"></span>
                 <span class="text-gray-700 dark:text-gray-300">
-                  <strong>型號 (Model)</strong> (位元 4-7): {{ cpuidData.model }}
+                  <strong>Model</strong> (Bits 4-7): {{ cpuidData.model }}
                 </span>
               </div>
               <div class="flex items-center space-x-3">
                 <span class="w-4 h-4 bg-amber-500 rounded flex-shrink-0"></span>
                 <span class="text-gray-700 dark:text-gray-300">
-                  <strong>系列 (Family)</strong> (位元 8-11): {{ cpuidData.family }}
+                  <strong>Family</strong> (Bits 8-11): {{ cpuidData.family }}
                 </span>
               </div>
               <div class="flex items-center space-x-3">
                 <span class="w-4 h-4 bg-violet-500 rounded flex-shrink-0"></span>
                 <span class="text-gray-700 dark:text-gray-300">
-                  <strong>擴展型號 (Extended Model)</strong> (位元 16-19): {{ cpuidData.extModel }}
+                  <strong>Extended Model</strong> (Bits 16-19): {{ cpuidData.extModel }}
                 </span>
               </div>
               <div class="flex items-center space-x-3">
                 <span class="w-4 h-4 bg-emerald-500 rounded flex-shrink-0"></span>
                 <span class="text-gray-700 dark:text-gray-300">
-                  <strong>擴展系列 (Extended Family)</strong> (位元 20-27):
+                  <strong>Extended Family</strong> (Bits 20-27):
                   {{ cpuidData.extFamily }}
                 </span>
               </div>
@@ -127,18 +124,17 @@
           <!-- 逐步解析 -->
           <div
             class="p-4 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg"
-          >
-            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">逐步解析</h3>
+          >            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">Step-by-Step Analysis</h3>
             <div class="font-mono text-sm space-y-2 text-gray-700 dark:text-gray-300">
               <div>
-                <strong>系列:</strong> {{ cpuidData.fullFamily }}
+                <strong>Family:</strong> {{ cpuidData.fullFamily }}
                 <span class="text-gray-500 dark:text-gray-400">{{ familyCalculation }}</span>
               </div>
               <div>
-                <strong>型號:</strong> 0x{{ cpuidData.fullModel.toString(16).toUpperCase() }}
+                <strong>Model:</strong> 0x{{ cpuidData.fullModel.toString(16).toUpperCase() }}
                 <span class="text-gray-500 dark:text-gray-400">{{ modelCalculation }}</span>
               </div>
-              <div><strong>步進:</strong> {{ cpuidData.stepping }}</div>
+              <div><strong>Stepping:</strong> {{ cpuidData.stepping }}</div>
             </div>
           </div>
 
@@ -146,9 +142,9 @@
           <div
             class="p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg"
           >
-            <h3 class="text-lg font-semibold text-blue-900 dark:text-blue-300 mb-3">最終結果</h3>
+            <h3 class="text-lg font-semibold text-blue-900 dark:text-blue-300 mb-3">Final Result</h3>
             <div class="font-mono text-lg font-bold text-blue-800 dark:text-blue-200">
-              <strong>系列-型號-步進:</strong>
+              <strong>Family-Model-Stepping:</strong>
               <span class="bg-blue-100 dark:bg-blue-800 px-2 py-1 rounded ml-2">
                 {{ cpuidData.fullFamily }}-{{ cpuidData.fullModel.toString(16).toUpperCase() }}-{{
                   cpuidData.stepping
@@ -208,13 +204,12 @@ const getBitFieldType = (bitPosition) => {
 
 const validateInput = (input) => {
   if (!input) return { isValid: true, message: '' }
-
   if (!/^[0-9a-fA-F]+$/.test(input)) {
-    return { isValid: false, message: '❌ 請輸入有效的十六進制 CPUID 值' }
+    return { isValid: false, message: '❌ Please enter a valid hexadecimal CPUID value' }
   }
 
   if (input.length > 8) {
-    return { isValid: false, message: '❌ CPUID 不應超過 32 位元（8 個十六進制數字）' }
+    return { isValid: false, message: '❌ CPUID should not exceed 32 bits (8 hexadecimal digits)' }
   }
 
   return { isValid: true, message: '' }
@@ -290,7 +285,7 @@ const parseCPUID = () => {
     binaryDisplay.value = generateBinaryDisplay(binaryStr) // 提取 CPUID 字段
     cpuidData.value = extractCpuidFields(cpuid)
   } catch (error) {
-    errorMessage.value = '❌ 解析 CPUID 時發生錯誤'
+    errorMessage.value = '❌ Error occurred while parsing CPUID'
     console.error('CPUID parsing error:', error)
   }
 }
